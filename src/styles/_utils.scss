@@ -8,6 +8,7 @@ $dark-gray: hsl(0, 0%, 48%);
 $gap-1: min(1rem, 5%);
 $gap-1-5: min(1.5rem, 7%);
 $gap-2: min(2rem, 10%);
+$gap-3: min(3rem, 15%);
 $gap-5: min(5rem, 20%);
 
 $rds: 0.5rem;
@@ -17,6 +18,7 @@ $fw-5: 500;
 $fw-6: 600;
 $fw-7: 700;
 
+$fs-xs: 0.8rem;
 $fs-s: 1rem;
 $fs-m: 1.25rem;
 $fs-l: 1.5rem;
@@ -50,5 +52,55 @@ $fs-xl: 2rem;
 		width: 100%;
 		height: 100%;
 		background-image: linear-gradient(to bottom, #00000099, transparent);
+	}
+}
+
+.card {
+	@include flex(column, center, center);
+	gap: 1.2rem;
+	margin: 0 $gap-1-5;
+	padding: $gap-1-5;
+	text-align: center;
+	box-shadow: 0 0 2px 0 #00000020;
+	border-radius: $rds;
+	position: relative;
+
+	&__logo {
+		position: absolute;
+		top: 0;
+		transform: translateY(-50%);
+	}
+
+	&__title {
+		font-size: $fs-m;
+	}
+
+	&__text {
+		color: $dark-gray;
+		font-size: $fs-xs;
+		line-height: 1.5rem;
+	}
+
+	&__container {
+		width: 100%;
+		height: 5ch;
+		height: max-content;
+		@include flex(row, space-between, center);
+	}
+}
+
+.button {
+	background-color: $moderate-cyan;
+	border: none;
+	height: 5ch;
+	padding: 0 4ch;
+	color: white;
+	font-size: $fs-s;
+	font-weight: $fw-6;
+	border-radius: 50px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $dark-cyan;
 	}
 }
