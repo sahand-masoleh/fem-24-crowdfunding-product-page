@@ -1,0 +1,41 @@
+@use "./utils" as *;
+
+.nav {
+	@include flex(row, space-between, flex-start);
+	background: center / cover no-repeat
+		url("../assets/images/image-hero-mobile.jpg");
+	min-width: 100%;
+	height: 20rem;
+	padding: $gap-2 $gap-1-5;
+
+	&__hamburger {
+		width: 2ch;
+		aspect-ratio: 1;
+		border: none;
+		cursor: pointer;
+
+		&[data-open="true"] {
+			background: center / contain no-repeat
+				url("../assets/images/icon-close-menu.svg");
+		}
+
+		&[data-open="false"] {
+			background: center / contain no-repeat
+				url("../assets/images/icon-hamburger.svg");
+		}
+	}
+	&__modal {
+		gap: 1.5rem;
+	}
+
+	&__item {
+		font-weight: $fw-5;
+		font-size: $fs-s;
+		cursor: pointer;
+	}
+
+	&__divider {
+		width: 100%;
+		opacity: 0.25;
+	}
+}

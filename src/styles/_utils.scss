@@ -1,0 +1,54 @@
+/* ### Primary */
+$moderate-cyan: hsl(176, 50%, 47%);
+$dark-cyan: hsl(176, 72%, 28%);
+/* ### neutral */
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 48%);
+
+$gap-1: min(1rem, 5%);
+$gap-1-5: min(1.5rem, 7%);
+$gap-2: min(2rem, 10%);
+$gap-5: min(5rem, 20%);
+
+$rds: 0.5rem;
+
+$fw-4: 400;
+$fw-5: 500;
+$fw-6: 600;
+$fw-7: 700;
+
+$fs-s: 1rem;
+$fs-m: 1.25rem;
+$fs-l: 1.5rem;
+$fs-xl: 2rem;
+
+@mixin flex($drc, $jsc: center, $ali: center) {
+	display: flex;
+	flex-direction: $drc;
+	justify-content: $jsc;
+	align-items: $ali;
+}
+
+.modal {
+	@include flex(column, center, flex-start);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: $gap-5 $gap-1-5 $gap-1-5 $gap-1-5;
+	padding: $gap-1-5;
+	border-radius: $rds;
+	background-color: white;
+
+	&__bg {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(to bottom, #00000099, transparent);
+	}
+}
