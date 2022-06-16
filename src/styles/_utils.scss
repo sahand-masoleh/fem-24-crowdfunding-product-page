@@ -5,6 +5,8 @@ $dark-cyan: hsl(176, 72%, 28%);
 $black: hsl(0, 0%, 0%);
 $dark-gray: hsl(0, 0%, 48%);
 
+$outline: 1px solid #00000020;
+
 $gap-1: min(1rem, 5%);
 $gap-1-5: min(1.5rem, 7%);
 $gap-2: min(2rem, 10%);
@@ -18,7 +20,8 @@ $fw-5: 500;
 $fw-6: 600;
 $fw-7: 700;
 
-$fs-xs: 0.8rem;
+$fs-xxs: 0.8rem;
+$fs-xs: 0.9rem;
 $fs-s: 1rem;
 $fs-m: 1.25rem;
 $fs-l: 1.5rem;
@@ -32,36 +35,44 @@ $fs-xl: 2rem;
 }
 
 .modal {
-	@include flex(column, center, flex-start);
-	position: absolute;
+	@include flex(column, flex-start, flex-start);
+	position: fixed;
+	overflow: scroll;
 	top: 0;
 	left: 0;
 	right: 0;
 	margin: $gap-5 $gap-1-5 $gap-1-5 $gap-1-5;
+	max-height: calc(100% - ($gap-5 + $gap-1-5));
 	padding: $gap-1-5;
 	border-radius: $rds;
 	background-color: white;
+	z-index: 1000;
 
 	&__bg {
-		position: absolute;
-		z-index: 0;
+		position: fixed;
+		z-index: 1;
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
 		width: 100%;
 		height: 100%;
-		background-image: linear-gradient(to bottom, #00000099, transparent);
+		background-color: #00000099;
 	}
 }
 
 .card {
-	@include flex(column, center, center);
+	&--left {
+		@include flex(column, center, flex-start);
+		margin: 0;
+	}
+	&--center {
+		@include flex(column, center, center);
+		margin: 0 $gap-1-5;
+	}
 	gap: 1.2rem;
-	margin: 0 $gap-1-5;
 	padding: $gap-1-5;
-	text-align: center;
-	box-shadow: 0 0 2px 0 #00000020;
+	outline: $outline;
 	border-radius: $rds;
 	position: relative;
 
@@ -77,7 +88,7 @@ $fs-xl: 2rem;
 
 	&__text {
 		color: $dark-gray;
-		font-size: $fs-xs;
+		font-size: $fs-xxs;
 		line-height: 1.5rem;
 	}
 

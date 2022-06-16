@@ -1,0 +1,16 @@
+@use "./utils" as *;
+
+.back {
+	@include flex(column, flex-start, flex-start);
+	gap: 2ch;
+
+	&__title {
+		font-size: $fs-m;
+	}
+
+	&__text {
+		font-size: $fs-xs;
+		line-height: 3ch;
+		color: $dark-gray;
+	}
+}

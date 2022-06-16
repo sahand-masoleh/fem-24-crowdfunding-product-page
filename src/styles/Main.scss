@@ -1,17 +1,4 @@
 .main {
 	position: relative;
 	background-color: #00000005;
-
-	&__intro {
-		position: relative;
-		margin-top: -3rem;
-		padding-top: 3rem;
-		background-color: white;
-	}
-
-	&__bookmark {
-		aspect-ratio: 1;
-		border-radius: 50%;
-		padding: 0;
-	}
 }

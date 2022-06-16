@@ -1,0 +1,49 @@
+@use "./utils" as *;
+
+.option {
+	text-align: left;
+	cursor: pointer;
+
+	&__title {
+		@include flex(row, flex-start, center);
+		gap: 1rem;
+	}
+
+	&__name-container {
+		@include flex(row, flex-start, flex-start);
+		flex-wrap: wrap;
+		gap: 1ch;
+	}
+
+	&__org-checkbox {
+		display: none;
+	}
+
+	&__checkbox {
+		grid-row: 1/3;
+		height: 2ch;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		outline: $outline;
+	}
+
+	&__org-checkbox:checked + &__checkbox {
+		background-color: $moderate-cyan;
+		box-shadow: inset 0 0 0 0.5ch #fff;
+	}
+
+	&__name {
+		font-size: $fs-xs;
+		flex-basis: 100%;
+	}
+
+	&__min {
+		color: $moderate-cyan;
+		font-size: $fs-xxs;
+		font-weight: $fw-6;
+	}
+
+	&--checked {
+		outline: 2px solid $moderate-cyan !important;
+	}
+}

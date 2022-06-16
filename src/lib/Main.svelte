@@ -1,13 +1,13 @@
 <script>
-    // @ts-nocheck
-    import '../styles/Main.scss'
+	// @ts-nocheck
+	import "../styles/Main.scss";
 
-    import Main__Intro from "./Main__Intro.svelte";
-    import Main__Stats from './Main__stats.svelte';
+	import Intro from "./Intro.svelte";
+	import Stats from "./Stats.svelte";
 </script>
 
 <main class="main">
-    <Main__Intro />
-    <Main__Stats />
-    <section class="main__pledge"></section>
+	<Intro />
+	<Stats />
+	<section class="main__pledge" />
 </main>
