@@ -1,5 +1,35 @@
 <script>
+	import "../styles/Stats.scss";
+	import { totalPledge, backers } from "./store";
 
+	$: formattedPledge = new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: "USD",
+		maximumFractionDigits: 0,
+	}).format($totalPledge);
+
+	$: formattedBackers = new Intl.NumberFormat("en-US", {
+		style: "decimal",
+	}).format($backers);
 </script>
 
-<h2>Yolo</h2>
+<section class="stats card card--center">
+	<div class="stats__container">
+		<p class="stats__num">{formattedPledge}</p>
+		<p class="stats__text card__text">of $100,000 backed</p>
+	</div>
+	<hr class="stats__divider" />
+	<div class="stats__container">
+		<p class="stats__num">{formattedBackers}</p>
+		<p class="stats__text card__text">total backers</p>
+	</div>
+	<hr class="stats__divider" />
+	<div class="stats__container">
+		<p class="stats__num">56</p>
+		<p class="stats__text card__text">days left</p>
+	</div>
+	<div
+		class="stats__bar"
+		style={`--width: ${($totalPledge * 100) / 100000}%`}
+	/>
+</section>

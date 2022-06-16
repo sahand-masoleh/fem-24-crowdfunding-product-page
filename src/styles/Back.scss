@@ -3,6 +3,7 @@
 .back {
 	@include flex(column, flex-start, flex-start);
 	gap: 2ch;
+	text-align: left;
 
 	&__title {
 		font-size: $fs-m;

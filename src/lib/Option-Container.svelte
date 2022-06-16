@@ -1,7 +1,7 @@
 <script>
 	// @ts-nocheck
 	import Option from "./Option.svelte";
-	import { options, totalPledge } from "./store";
+	import { options, totalPledge, backers } from "./store";
 
 	let checked;
 
@@ -16,6 +16,7 @@
 			});
 		}
 		totalPledge.update((n) => n + pledge * 1);
+		backers.update((n) => n + 1);
 	}
 </script>
 

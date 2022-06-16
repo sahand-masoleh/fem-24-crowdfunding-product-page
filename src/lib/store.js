@@ -31,3 +31,4 @@ let data = [
 
 export const options = writable(data);
 export const totalPledge = writable(89914);
+export const backers = writable(5007);

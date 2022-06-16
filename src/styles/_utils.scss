@@ -65,17 +65,21 @@ $fs-xl: 2rem;
 	&--left {
 		@include flex(column, center, flex-start);
 		margin: 0;
+		text-align: left;
+		outline: $outline;
 	}
 	&--center {
 		@include flex(column, center, center);
+		text-align: center;
 		margin-left: $gap-1-5;
 		margin-right: $gap-1-5;
+		outline: 1px solid #0000000a;
 	}
 	gap: 1.2rem;
 	padding: $gap-1-5;
-	outline: $outline;
 	border-radius: $rds;
 	position: relative;
+	background-color: white;
 
 	&__logo {
 		position: absolute;
