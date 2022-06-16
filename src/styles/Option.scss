@@ -42,10 +42,22 @@
 		font-weight: $fw-6;
 	}
 
+	&__left {
+		font-size: $fs-l;
+		font-weight: $fw-7;
+		color: $black;
+		margin-right: 0.5ch;
+	}
+
 	&__divider {
 		all: unset;
 		width: 100%;
 		outline: $outline;
+	}
+
+	&__enter {
+		width: 100%;
+		text-align: center;
 	}
 
 	&__input-container {
@@ -64,7 +76,7 @@
 
 	&__input {
 		width: 10ch;
-		height: 5ch;
+		height: 3rem;
 		border-radius: 50px;
 		border: none;
 		outline: $outline;
@@ -76,6 +88,10 @@
 	&__button {
 		padding: 0 3ch;
 		font-size: $fs-xs;
+	}
+
+	&--no-select {
+		cursor: default;
 	}
 
 	&--checked {

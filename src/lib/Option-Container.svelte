@@ -1,25 +1,13 @@
 <script>
 	// @ts-nocheck
+
 	import Option from "./Option.svelte";
-	import { options, totalPledge, backers } from "./store";
+	import { options } from "./store";
 
-	let checked;
-
-	function handlePledge(event) {
-		const { value, pledge } = event.detail;
-		if (value !== "none") {
-			options.update((data) => {
-				let index = data.findIndex((e) => e.value === value);
-				let newData = data.slice();
-				newData[index].left--;
-				return newData;
-			});
-		}
-		totalPledge.update((n) => n + pledge * 1);
-		backers.update((n) => n + 1);
-	}
+	export let modal;
+	export let checked;
 </script>
 
 {#each $options as option}
-	<Option {...option} bind:checked on:pledge={handlePledge} />
+	<Option {...option} {modal} bind:checked on:pledge on:open-modal />
 {/each}

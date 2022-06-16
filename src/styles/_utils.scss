@@ -36,13 +36,11 @@ $fs-xl: 2rem;
 
 .modal {
 	@include flex(column, flex-start, flex-start);
-	position: fixed;
-	overflow: scroll;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	margin: $gap-5 $gap-1-5 $gap-1-5 $gap-1-5;
-	max-height: calc(100% - ($gap-5 + $gap-1-5));
 	padding: $gap-1-5;
 	border-radius: $rds;
 	background-color: white;
@@ -108,7 +106,7 @@ $fs-xl: 2rem;
 .button {
 	background-color: $moderate-cyan;
 	border: none;
-	height: 5ch;
+	height: 3rem;
 	color: white;
 	font-size: $fs-s;
 	font-weight: $fw-6;

@@ -9,10 +9,15 @@
 	}
 
 	&__bookmark {
+		height: 3rem;
 		aspect-ratio: 1;
 		border-radius: 50%;
 		padding: 0;
 		border: none;
 		cursor: pointer;
+	}
+
+	&__icon {
+		height: 100%;
 	}
 }
