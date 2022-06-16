@@ -1,5 +1,6 @@
 <script>
 	// @ts-nocheck
+	import { createEventDispatcher } from "svelte";
 	import "../styles/Option.scss";
 
 	export let value;
@@ -7,15 +8,30 @@
 	export let min;
 	export let text;
 	export let left;
+
 	export let checked;
 	function handleClick(value) {
 		checked = value;
 	}
+
+	let pledge;
+	$: enough = min ? pledge > min : pledge > 0;
+
+	const dispath = createEventDispatcher();
+	function handleSubmit() {
+		if (min && pledge < min) {
+			error = true;
+		} else {
+			dispath("pledge", { value, pledge });
+		}
+	}
 </script>
 
 <section
-	class={`option card card--left ${checked === value ? "option--checked" : ""}`}
-	on:click={() => handleClick(value)}
+	class={`option card card--left ${
+		checked === value ? "option--checked" : ""
+	} ${left === 0 ? "option--disabled" : ""}`}
+	on:click={() => left != 0 && handleClick(value)}
 >
 	<div class="option__title">
 		<input
@@ -37,7 +53,22 @@
 	<p class="option__text card__text">
 		{text}
 	</p>
-	{#if left}
+	{#if left != undefined}
 		<p class="option__left">{left} left</p>
+	{/if}
+
+	{#if checked === value}
+		<hr class="option__divider" />
+		<p class="card__text">Enter your pledge</p>
+		<div class="card__container">
+			<div class="option__input-container">
+				<input type="text" bind:value={pledge} class="option__input" />
+			</div>
+			<button
+				class="option__button button"
+				disabled={!enough}
+				on:click={handleSubmit}>Continue</button
+			>
+		</div>
 	{/if}
 </section>

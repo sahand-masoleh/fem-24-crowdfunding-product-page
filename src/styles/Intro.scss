@@ -1,8 +1,12 @@
 .intro {
 	position: relative;
 	margin-top: -3rem;
-	padding-top: 3rem;
+	padding-top: 3rem !important;
 	background-color: white;
+
+	&__button {
+		padding: 0 4ch;
+	}
 
 	&__bookmark {
 		aspect-ratio: 1;

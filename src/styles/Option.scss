@@ -43,7 +43,48 @@
 		font-weight: $fw-6;
 	}
 
+	&__divider {
+		all: unset;
+		width: 100%;
+		outline: $outline;
+	}
+
+	&__input-container {
+		position: relative;
+		@include flex(row, flex-start, center);
+
+		&::after {
+			content: "$";
+			position: absolute;
+			left: 2ch;
+			font-weight: $fw-7;
+			font-size: $fs-xs;
+			opacity: 0.25;
+		}
+	}
+
+	&__input {
+		width: 10ch;
+		height: 5ch;
+		border-radius: 50px;
+		border: none;
+		outline: $outline;
+		padding: 2ch 2ch 2ch 4ch;
+		font-weight: $fw-7;
+		position: relative;
+	}
+
+	&__button {
+		padding: 0 3ch;
+		font-size: $fs-xs;
+	}
+
 	&--checked {
 		outline: 2px solid $moderate-cyan !important;
+	}
+
+	&--disabled {
+		opacity: 0.5;
+		cursor: default;
 	}
 }
