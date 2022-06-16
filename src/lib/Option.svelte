@@ -35,7 +35,8 @@
 		class={`option card card--left ${
 			!modal ? "option--no-select" : checked === value ? "option--checked" : ""
 		} ${left < 1 ? "option--disabled" : ""}`}
-		on:click={() => modal && left > 0 && handleClick(value)}
+		on:click={() =>
+			modal && (left > 0 || left == undefined) && handleClick(value)}
 	>
 		<div class="option__title">
 			{#if modal}

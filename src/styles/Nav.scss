@@ -26,6 +26,12 @@
 	}
 	&__modal {
 		gap: 1.5rem;
+		position: absolute;
+		margin: $gap-1-5;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: $gap-5 $gap-1-5 $gap-1-5 $gap-1-5;
 	}
 
 	&__item {
@@ -37,5 +43,10 @@
 	&__divider {
 		width: 100%;
 		opacity: 0.25;
+	}
+
+	@media screen and (min-width: 480px) {
+		background: center / cover no-repeat
+			url("../assets/images/image-hero-desktop.jpg");
 	}
 }

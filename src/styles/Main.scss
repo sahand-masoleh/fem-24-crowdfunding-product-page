@@ -3,4 +3,9 @@
 .main {
 	@include flex(column, flex-start, stretch);
 	gap: 1rem;
+	margin: 0 auto 3rem;
+
+	@media screen and (min-width: 480px) {
+		max-width: $max;
+	}
 }

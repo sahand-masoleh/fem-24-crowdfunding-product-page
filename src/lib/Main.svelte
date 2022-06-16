@@ -13,9 +13,11 @@
 		checked = event.detail?.value;
 		console.log(checked);
 		isModalOpen = true;
+		document.querySelector("body").style.overflow = "hidden";
 	}
 	function closeModal() {
 		isModalOpen = false;
+		document.querySelector("body").style.overflow = "auto";
 	}
 </script>
 

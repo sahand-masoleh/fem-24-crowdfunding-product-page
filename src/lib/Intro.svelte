@@ -28,12 +28,16 @@
 		<button class="intro__button button" on:click={openModal}
 			>Back this project</button
 		>
-		<button class="intro__bookmark" on:click={bookmark}>
+		<button
+			class={`intro__bookmark ${isBookmarked ? "intro__bookmark--active" : ""}`}
+			on:click={bookmark}
+		>
 			<img
 				class="intro__icon"
 				src={isBookmarked ? bookmarkDoneIcon : bookmarkIcon}
 				alt=""
 			/>
+			<p class="intro__label">{isBookmarked ? "Bookmarked" : "Bookmark"}</p>
 		</button>
 	</div>
 </section>
