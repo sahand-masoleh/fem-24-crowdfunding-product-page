@@ -1,5 +1,4 @@
 <script>
-	import "../styles/Stats.scss";
 	import { totalPledge, backers } from "./store";
 
 	$: formattedPledge = new Intl.NumberFormat("en-US", {
@@ -13,23 +12,20 @@
 	}).format($backers);
 </script>
 
-<section class="stats card card--center">
-	<div class="stats__container">
-		<p class="stats__num">{formattedPledge}</p>
-		<p class="stats__text card__text">of $100,000 backed</p>
+<section>
+	<div>
+		<p>{formattedPledge}</p>
+		<p>of $100,000 backed</p>
 	</div>
-	<hr class="stats__divider" />
-	<div class="stats__container">
-		<p class="stats__num">{formattedBackers}</p>
-		<p class="stats__text card__text">total backers</p>
+	<hr />
+	<div>
+		<p>{formattedBackers}</p>
+		<p>total backers</p>
 	</div>
-	<hr class="stats__divider" />
-	<div class="stats__container">
-		<p class="stats__num">56</p>
-		<p class="stats__text card__text">days left</p>
+	<hr />
+	<div>
+		<p>56</p>
+		<p>days left</p>
 	</div>
-	<div
-		class="stats__bar"
-		style={`--width: ${($totalPledge * 100) / 100000}%`}
-	/>
+	<div style={`--width: ${($totalPledge * 100) / 100000}%`} />
 </section>
