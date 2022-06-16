@@ -10,6 +10,10 @@
 		width: 33%;
 		border: none;
 		outline: $outline;
+		@media screen and (min-width: 480px) {
+			width: unset;
+			height: 3rem;
+		}
 	}
 
 	&__bar {
@@ -29,5 +33,13 @@
 			max-width: 100%;
 			background-color: $moderate-cyan;
 		}
+	}
+
+	@media screen and (min-width: 480px) {
+		flex-direction: row !important;
+		flex-wrap: wrap;
+		justify-content: flex-start !important;
+		gap: $gap-3 !important;
+		text-align: left !important;
 	}
 }
