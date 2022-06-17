@@ -3,7 +3,6 @@
 	import { createEventDispatcher } from "svelte";
 	import logo from "../assets/images/logo-mastercraft.svg";
 	import bookmarkIcon from "../assets/images/icon-bookmark.svg";
-	import bookmarkDoneIcon from "../assets/images/icon-bookmark-done.svg";
 
 	let isBookmarked = false;
 	function bookmark() {
@@ -23,7 +22,7 @@
 	<div>
 		<button on:click={openModal}>Back this project</button>
 		<button on:click={bookmark}>
-			<img src={isBookmarked ? bookmarkDoneIcon : bookmarkIcon} alt="" />
+			<!-- <img src={isBookmarked ? bookmarkDoneIcon : bookmarkIcon} alt="" /> -->
 			<p>{isBookmarked ? "Bookmarked" : "Bookmark"}</p>
 		</button>
 	</div>

@@ -1,25 +1,28 @@
 <script>
+	import "../styles/Nav.scss";
 	// @ts-nocheck
 	import logo from "../assets/images/logo.svg";
+	import hamburger from "../assets/images/icon-hamburger.svg";
+	import closeMenu from "../assets/images/icon-close-menu.svg";
 
-	export let isOpen = false;
-	function toggleModal() {
-		isOpen = isOpen ? false : true;
+	export let isMenuOpen = false;
+	function toggleMenu() {
+		isMenuOpen = isMenuOpen ? false : true;
 	}
 </script>
 
 <nav class="nav">
-	<img src={logo} alt="crowfund logo" />
-	<button on:click={toggleModal} data-open={isOpen} />
+	<img src={logo} alt="crowfund logo" class="nav__logo" />
+	<button on:click={toggleMenu} class="nav__hamburger"
+		><img src={isMenuOpen ? closeMenu : hamburger} alt="" /></button
+	>
 </nav>
 
-{#if isOpen}
-	<div on:click={toggleModal} />
-	<div on:click={toggleModal}>
-		<p>About</p>
-		<hr />
-		<p>Discover</p>
-		<hr />
-		<p>Get Started</p>
+{#if isMenuOpen}
+	<div on:click={toggleMenu} class="nav__curtain" />
+	<div on:click={toggleMenu} class="nav__menu">
+		<p class="nav__item">About</p>
+		<p class="nav__item">Discover</p>
+		<p class="nav__item">Get Started</p>
 	</div>
 {/if}
