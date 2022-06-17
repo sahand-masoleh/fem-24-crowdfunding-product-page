@@ -1,4 +1,6 @@
 <script>
+	import "../styles/Stats.scss";
+	// @ts-nocheck
 	import { totalPledge, backers } from "./store";
 
 	$: formattedPledge = new Intl.NumberFormat("en-US", {
@@ -12,20 +14,23 @@
 	}).format($backers);
 </script>
 
-<section>
-	<div>
-		<p>{formattedPledge}</p>
-		<p>of $100,000 backed</p>
+<section class="stats">
+	<div class="stats__container">
+		<p class="stats__num">{formattedPledge}</p>
+		<p class="stats__desc">of $100,000 backed</p>
 	</div>
-	<hr />
-	<div>
-		<p>{formattedBackers}</p>
-		<p>total backers</p>
+	<hr class="stats__divider" />
+	<div class="stats__container">
+		<p class="stats__num">{formattedBackers}</p>
+		<p class="stats__desc">total backers</p>
 	</div>
-	<hr />
-	<div>
-		<p>56</p>
-		<p>days left</p>
+	<hr class="stats__divider" />
+	<div class="stats__container">
+		<p class="stats__num">56</p>
+		<p class="stats__desc">days left</p>
 	</div>
-	<div style={`--width: ${($totalPledge * 100) / 100000}%`} />
+	<div
+		style={`--width: ${($totalPledge * 100) / 100000}%`}
+		class="stats__bar"
+	/>
 </section>

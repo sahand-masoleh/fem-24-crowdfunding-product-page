@@ -1,11 +1,12 @@
 /* ### Primary */
-$-p-moderate-cyan: hsl(176, 50%, 47%);
-$-p-dark-cyan: hsl(176, 72%, 28%);
+$c-p-moderate-cyan: hsl(176, 50%, 47%);
+$c-p-dark-cyan: hsl(176, 72%, 28%);
 /* ### neutral */
-$-n-black: hsl(0, 0%, 0%);
-$-n-dark-gray: hsl(0, 0%, 48%);
+$c-n-black: hsl(0, 0%, 0%);
+$c-n-dark-gray: hsl(0, 0%, 48%);
 
-$outline: 1px solid #00000020;
+$outline-light: 1px solid #00000010;
+$outline-dark: 1px solid #00000020;
 
 $gap-1: min(1rem, 5%);
 $gap-1-5: min(1.5rem, 7%);

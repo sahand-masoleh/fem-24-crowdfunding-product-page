@@ -1,0 +1,78 @@
+@use "./utils" as *;
+
+.intro {
+	background-color: white;
+	border-radius: $rds;
+	outline: $outline-light;
+	padding: $gap-2 $gap-1-5;
+
+	position: relative;
+
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+
+	&__logo {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__title {
+		font-size: $fs-m;
+		text-align: center;
+		flex-basis: fill;
+		margin-top: 1rem;
+	}
+
+	&__text {
+		font-size: $fs-xs;
+		text-align: center;
+		color: $c-n-dark-gray;
+		line-height: 2.5ch;
+		flex-basis: fill;
+	}
+
+	&__button-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__button {
+		background-color: $c-p-moderate-cyan;
+		border: none;
+		height: 3.5rem;
+		padding: 0 4ch;
+		border-radius: 50px;
+		cursor: pointer;
+
+		font-size: $fs-s;
+		font-weight: $fw-6;
+		color: white;
+	}
+
+	&__bookmark {
+		background-color: transparent;
+		border: none;
+
+		&-icon {
+			background-color: #000000c0;
+			mask: url(../assets/images/icon-bookmark.svg) center / cover;
+			height: 3.5rem;
+			width: 3.5rem;
+			position: relative;
+
+			&--done {
+				background-color: $c-p-moderate-cyan;
+			}
+		}
+
+		&-label {
+			display: none;
+		}
+	}
+}

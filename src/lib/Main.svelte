@@ -1,4 +1,5 @@
 <script>
+	import "../styles/Main.scss";
 	// @ts-nocheck
 	import Intro from "./Intro.svelte";
 	import Stats from "./Stats.svelte";

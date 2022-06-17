@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	position: relative;
+	margin-bottom: -5rem;
 
 	background: center / cover no-repeat
 		url(../assets/images/image-hero-mobile.jpg);
@@ -24,6 +24,7 @@
 		left: 0;
 		right: 0;
 		background-color: #00000050;
+		z-index: 1;
 	}
 
 	&__menu {
@@ -42,7 +43,7 @@
 
 	&__item {
 		padding: $gap-1-5;
-		border-bottom: $outline;
+		border-bottom: $outline-dark;
 		font-size: $fs-m;
 		font-weight: $fw-5;
 		cursor: pointer;
