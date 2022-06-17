@@ -1,8 +1,14 @@
 <script>
-	import "../styles/About.scss";
 	// @ts-nocheck
+	import "../styles/About.scss";
 
 	import { options } from "./store";
+	import { createEventDispatcher } from "svelte";
+
+	const dispatch = createEventDispatcher();
+	function handleSelect(value) {
+		dispatch("open-modal", { value });
+	}
 </script>
 
 <section class="about">
@@ -20,7 +26,7 @@
 		stored under the stand.
 	</p>
 
-	{#each $options as { name, min, text, left }, index}
+	{#each $options as { name, value, min, text, left }, index}
 		{#if min}
 			<div class={`about-option ${left < 1 ? "about-option--disabled" : ""}`}>
 				<h3 class="about-option__title">{name}</h3>
@@ -31,6 +37,7 @@
 					<span class="about-option__left-text">left</span>
 				</div>
 				<button
+					on:click={() => handleSelect(value)}
 					class={`about-option__button ${
 						left > 1
 							? "about-option__button--enabled"
