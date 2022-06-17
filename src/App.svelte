@@ -10,11 +10,11 @@
 	function openModal(event) {
 		checked = event.detail?.value;
 		isModalOpen = true;
-		// document.querySelector("body").style.overflow = "hidden";
+		document.querySelector("body").style.overflow = "hidden";
 	}
 	function closeModal() {
 		isModalOpen = false;
-		// document.querySelector("body").style.overflow = "auto";
+		document.querySelector("body").style.overflow = "auto";
 	}
 </script>
 
