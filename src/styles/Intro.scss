@@ -5,13 +5,16 @@
 	border-radius: $rds;
 	outline: $outline-light;
 	padding: $gap-2 $gap-1-5;
-
 	position: relative;
-
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	gap: 1.5rem;
+
+	@media screen and (min-width: 480px) {
+		padding: $gap-3;
+		justify-content: center;
+	}
 
 	&__logo {
 		position: absolute;
@@ -25,6 +28,10 @@
 		text-align: center;
 		flex-basis: fill;
 		margin: 1rem 1ch 0 1ch;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-xl;
+		}
 	}
 
 	&__text {
@@ -53,6 +60,10 @@
 		font-size: $fs-s;
 		font-weight: $fw-6;
 		color: white;
+
+		&:hover {
+			background-color: $c-p-dark-cyan;
+		}
 	}
 
 	&__bookmark {
@@ -60,20 +71,68 @@
 		border: none;
 		cursor: pointer;
 
+		@media screen and (min-width: 480px) {
+			display: flex;
+			align-items: center;
+			width: 20ch;
+			border-radius: 50px;
+
+			&--undone {
+				background-color: #00000010;
+
+				&:hover {
+					opacity: 0.75;
+				}
+			}
+
+			&--done {
+				background-color: #f4f8f9ff;
+				&:hover > .intro__bookmark-label--done {
+					color: $c-p-dark-cyan;
+				}
+
+				&:hover > .intro__bookmark-icon--done {
+					background-color: $c-p-dark-cyan;
+				}
+			}
+		}
+
 		&-icon {
-			background-color: #000000c0;
 			mask: url(../assets/images/icon-bookmark.svg) center / cover;
 			height: 3.5rem;
 			width: 3.5rem;
 			position: relative;
 
+			&--undone {
+				background-color: #000000c0;
+			}
+
 			&--done {
 				background-color: $c-p-moderate-cyan;
+
+				&:hover {
+					background-color: $c-p-dark-cyan;
+				}
 			}
 		}
 
 		&-label {
 			display: none;
+			font-size: $fs-s;
+			font-weight: $fw-7;
+
+			&--undone {
+				color: $c-n-dark-gray;
+			}
+
+			&--done {
+				color: $c-p-moderate-cyan;
+			}
+
+			@media screen and (min-width: 480px) {
+				display: unset;
+				margin: auto;
+			}
 		}
 	}
 }

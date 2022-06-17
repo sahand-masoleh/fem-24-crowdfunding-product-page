@@ -3,7 +3,6 @@
 	import "../styles/Intro.scss";
 	import { createEventDispatcher } from "svelte";
 	import logo from "../assets/images/logo-mastercraft.svg";
-	import bookmarkIcon from "../assets/images/icon-bookmark.svg";
 
 	let isBookmarked = false;
 	function bookmark() {
@@ -25,13 +24,26 @@
 	<div class="intro__button-container">
 		<button on:click={openModal} class="intro__button">Back this project</button
 		>
-		<button on:click={bookmark} class="intro__bookmark">
+		<button
+			on:click={bookmark}
+			class={`intro__bookmark ${
+				isBookmarked ? "intro__bookmark--done" : "intro__bookmark--undone"
+			}`}
+		>
 			<div
 				class={`intro__bookmark-icon ${
-					isBookmarked ? "intro__bookmark-icon--done" : ""
+					isBookmarked
+						? "intro__bookmark-icon--done"
+						: "intro__bookmark-icon--undone"
 				}`}
 			/>
-			<p class="intro__bookmark-label">
+			<p
+				class={`intro__bookmark-label ${
+					isBookmarked
+						? "intro__bookmark-label--done"
+						: "intro__bookmark-label--undone"
+				}`}
+			>
 				{isBookmarked ? "Bookmarked" : "Bookmark"}
 			</p>
 		</button>
