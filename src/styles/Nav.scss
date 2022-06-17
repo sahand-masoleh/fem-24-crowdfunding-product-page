@@ -1,20 +1,39 @@
 @use "./utils" as *;
 
+.nav-container {
+	background: bottom / cover no-repeat;
+	background-image: url(../assets/images/image-hero-mobile.jpg);
+	margin-bottom: -5rem;
+
+	@media screen and (min-width: 480px) {
+		background-image: url(../assets/images/image-hero-desktop.jpg);
+		margin-bottom: -7rem;
+	}
+}
+
 .nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	margin-bottom: -5rem;
+	max-width: 75rem;
+	margin: 0 auto;
 
-	background: center / cover no-repeat
-		url(../assets/images/image-hero-mobile.jpg);
 	height: 20rem;
 	padding: $gap-2 $gap-1-5;
+
+	@media screen and (min-width: 480px) {
+		height: 25rem;
+		padding-top: $gap-3;
+	}
 
 	&__hamburger {
 		background-color: transparent;
 		border: none;
 		cursor: pointer;
+
+		@media screen and (min-width: 480px) {
+			display: none;
+		}
 	}
 
 	&__curtain {
@@ -27,7 +46,7 @@
 		z-index: 1;
 	}
 
-	&__menu {
+	&__menu--modal {
 		position: absolute;
 		z-index: 1000;
 		background-color: white;
@@ -39,6 +58,18 @@
 		flex-direction: column;
 		gap: 1ch;
 		border-radius: $rds;
+
+		@media screen and (min-width: 480px) {
+			display: none;
+		}
+	}
+
+	&__menu--desktop {
+		display: none;
+		@media screen and (min-width: 480px) {
+			display: flex;
+			gap: 3ch;
+		}
 	}
 
 	&__item {
@@ -50,6 +81,14 @@
 
 		&:last-of-type {
 			border-bottom: none;
+		}
+
+		@media screen and (min-width: 480px) {
+			padding: 0;
+			border-bottom: none;
+			font-size: $fs-s;
+			font-weight: $fw-5;
+			color: white;
 		}
 	}
 }

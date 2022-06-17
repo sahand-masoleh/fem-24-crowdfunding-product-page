@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div>
+<div class="app">
 	<Nav />
 	<Main on:open-modal={openModal} />
 	{#if isModalOpen}

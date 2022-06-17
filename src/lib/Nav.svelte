@@ -11,16 +11,23 @@
 	}
 </script>
 
-<nav class="nav">
-	<img src={logo} alt="crowfund logo" class="nav__logo" />
-	<button on:click={toggleMenu} class="nav__hamburger"
-		><img src={isMenuOpen ? closeMenu : hamburger} alt="" /></button
-	>
-</nav>
+<div class="nav-container">
+	<nav class="nav">
+		<img src={logo} alt="crowfund logo" class="nav__logo" />
+		<div class="nav__menu nav__menu--desktop">
+			<p class="nav__item">About</p>
+			<p class="nav__item">Discover</p>
+			<p class="nav__item">Get Started</p>
+		</div>
+		<button on:click={toggleMenu} class="nav__hamburger"
+			><img src={isMenuOpen ? closeMenu : hamburger} alt="" /></button
+		>
+	</nav>
+</div>
 
 {#if isMenuOpen}
 	<div on:click={toggleMenu} class="nav__curtain" />
-	<div on:click={toggleMenu} class="nav__menu">
+	<div on:click={toggleMenu} class="nav__menu nav__menu--modal">
 		<p class="nav__item">About</p>
 		<p class="nav__item">Discover</p>
 		<p class="nav__item">Get Started</p>
