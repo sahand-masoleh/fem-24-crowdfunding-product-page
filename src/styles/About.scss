@@ -1,0 +1,85 @@
+@use "./utils" as *;
+
+.about {
+	background-color: white;
+	padding: $gap-2 $gap-1-5;
+	border-radius: $rds;
+	outline: $outline-light;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	&__title {
+		font-size: $fs-m;
+	}
+
+	&__text {
+		font-size: $fs-xs;
+		color: $c-n-dark-gray;
+		line-height: 3ch;
+	}
+}
+
+.option {
+	padding: $gap-1-5;
+	outline: $outline-dark;
+	border-radius: $rds;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.5rem;
+
+	&--disabled {
+		opacity: 0.5;
+	}
+
+	&__title {
+		font-size: $fs-xs;
+	}
+
+	&__min {
+		margin-bottom: auto;
+		font-weight: $fw-6;
+		font-size: $fs-xs;
+		color: $c-p-moderate-cyan;
+		margin-top: -1rem;
+	}
+
+	&__text {
+		font-size: $fs-xs;
+		color: $c-n-dark-gray;
+		line-height: 2.5ch;
+	}
+
+	&__left {
+		&-num {
+			font-size: $fs-xl;
+			font-weight: $fw-7;
+		}
+		&-text {
+			color: $c-n-dark-gray;
+			margin-left: 0.5ch;
+		}
+	}
+
+	&__button {
+		height: 3rem;
+		border: none;
+		padding: 0 4ch;
+		color: white;
+		font-weight: $fw-6;
+		border-radius: 50px;
+
+		&--enabled {
+			background-color: $c-p-moderate-cyan;
+			cursor: pointer;
+		}
+
+		&--disabled {
+			background-color: $c-n-dark-gray;
+			cursor: not-allowed;
+		}
+	}
+}
