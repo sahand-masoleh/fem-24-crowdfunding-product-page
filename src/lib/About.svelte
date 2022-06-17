@@ -22,17 +22,19 @@
 
 	{#each $options as { name, min, text, left }, index}
 		{#if min}
-			<div class={`option ${left < 1 ? "option--disabled" : ""}`}>
-				<h3 class="option__title">{name}</h3>
-				<span class="option__min">Pledge ${min} or more</span>
-				<p class="option__text">{text}</p>
-				<div class="option__left-container">
-					<span class="option__left-num">{left}</span>
-					<span class="option__left-text">left</span>
+			<div class={`about-option ${left < 1 ? "about-option--disabled" : ""}`}>
+				<h3 class="about-option__title">{name}</h3>
+				<span class="about-option__min">Pledge ${min} or more</span>
+				<p class="about-option__text">{text}</p>
+				<div class="about-option__left-container">
+					<span class="about-option__left-num">{left}</span>
+					<span class="about-option__left-text">left</span>
 				</div>
 				<button
-					class={`option__button ${
-						left > 1 ? "option__button--enabled" : "option__button--disabled"
+					class={`about-option__button ${
+						left > 1
+							? "about-option__button--enabled"
+							: "about-option__button--disabled"
 					}`}>Select Reward</button
 				>
 			</div>

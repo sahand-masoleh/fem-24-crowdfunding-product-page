@@ -1,6 +1,6 @@
 <script>
-	import "../styles/Stats.scss";
 	// @ts-nocheck
+	import "../styles/Stats.scss";
 	import { totalPledge, backers } from "./store";
 
 	$: formattedPledge = new Intl.NumberFormat("en-US", {

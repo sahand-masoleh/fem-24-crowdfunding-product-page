@@ -1,6 +1,6 @@
 <script>
-	import "./styles/App.scss";
 	// @ts-nocheck
+	import "./styles/App.scss";
 	import Nav from "./lib/Nav.svelte";
 	import Main from "./lib/Main.svelte";
 	import Pledge from "./lib/Pledge.svelte";

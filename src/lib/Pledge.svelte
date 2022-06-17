@@ -1,5 +1,6 @@
 <script>
 	// @ts-nocheck
+	import "../styles/Pledge.scss";
 	import checklcon from "../assets/images/icon-check.svg";
 
 	import OptionContainer from "./Option-Container.svelte";
@@ -16,7 +17,6 @@
 	import { options, totalPledge, backers } from "./store";
 	function handlePledge(event) {
 		const { value, pledge } = event.detail;
-		console.log({ value, pledge });
 		if (value !== "none") {
 			options.update((data) => {
 				let index = data.findIndex((e) => e.value === value);
@@ -31,7 +31,7 @@
 	}
 </script>
 
-<div on:click={closeModal} />
+<div class="pledge__curtain" on:click={closeModal} />
 {#if !hasSubmitted}
 	<div class="pledge">
 		<h2>Back this project</h2>
@@ -39,17 +39,17 @@
 			Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the
 			world?
 		</p>
-		<OptionContainer modal {checked} on:pledge={handlePledge} />
+		<OptionContainer {checked} on:pledge={handlePledge} />
 	</div>
 {:else}
 	<div class="thankyou">
-		<img src={checklcon} alt="" />
-		<h2>Thanks for your support!</h2>
-		<p>
+		<img src={checklcon} alt="" class="thankyou__icon" />
+		<h2 class="thankyou__title">Thanks for your support!</h2>
+		<p class="thankyou__text">
 			Your pledge brings us one step closer to sharing Mastercraft Bamboo
 			Monitor Riser worldwide. You will get an email once our campaign is
 			completed.
 		</p>
-		<button on:click={closeModal}>Got it!</button>
+		<button on:click={closeModal} class="thankyou__button">Got it!</button>
 	</div>
 {/if}

@@ -1,6 +1,6 @@
 <script>
-	import "../styles/Intro.scss";
 	// @ts-nocheck
+	import "../styles/Intro.scss";
 	import { createEventDispatcher } from "svelte";
 	import logo from "../assets/images/logo-mastercraft.svg";
 	import bookmarkIcon from "../assets/images/icon-bookmark.svg";

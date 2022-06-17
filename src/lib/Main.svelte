@@ -1,6 +1,6 @@
 <script>
-	import "../styles/Main.scss";
 	// @ts-nocheck
+	import "../styles/Main.scss";
 	import Intro from "./Intro.svelte";
 	import Stats from "./Stats.svelte";
 	import About from "./About.svelte";
