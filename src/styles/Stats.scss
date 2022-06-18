@@ -12,10 +12,19 @@
 	text-align: center;
 	gap: 1.5rem;
 
+	@media screen and (min-width: 480px) {
+		flex-flow: row wrap;
+		column-gap: 8%;
+	}
+
 	&__container {
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
+
+		@media screen and (min-width: 480px) {
+			align-items: flex-start;
+		}
 	}
 
 	&__num {
@@ -33,6 +42,11 @@
 		border-bottom: none;
 		border-left: none;
 		color: #00000040;
+
+		@media screen and (min-width: 480px) {
+			height: 4rem;
+			width: 1px;
+		}
 	}
 
 	&__bar {
@@ -41,6 +55,10 @@
 		background-color: #00000010;
 		border-radius: 50px;
 		position: relative;
+
+		@media screen and (min-width: 480px) {
+			flex-basis: fill;
+		}
 
 		&::after {
 			position: absolute;
