@@ -10,6 +10,11 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
+	max-width: 50rem;
+
+	@media screen and (min-width: 480px) {
+		padding: $gap-3;
+	}
 
 	position: absolute;
 	justify-self: center;
@@ -20,16 +25,40 @@
 		align-items: center;
 		width: 100%;
 		font-size: $fs-m;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-l;
+			margin-bottom: -1ch;
+		}
 	}
 
 	&__close {
 		cursor: pointer;
+		background-color: $c-n-dark-gray;
+		border: none;
+		width: 1rem;
+		aspect-ratio: 1;
+		mask: center / cover no-repeat url(../assets//images/icon-close-menu.svg);
+
+		&:hover {
+			background-color: black;
+		}
+
+		@media screen and (min-width: 480px) {
+			position: absolute;
+			right: 2rem;
+			top: 2rem;
+		}
 	}
 
 	&__text {
 		font-size: $fs-xs;
 		color: $c-n-dark-gray;
 		line-height: 3ch;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+		}
 	}
 
 	&__curtain {
@@ -59,7 +88,14 @@
 
 	&--disabled {
 		cursor: not-allowed;
+		outline: $outline-dark;
 		opacity: 0.5;
+
+		& .modal-option__title {
+			&:hover {
+				color: initial;
+			}
+		}
 	}
 
 	&__main {
@@ -72,6 +108,13 @@
 		grid-template-columns: 1rem 1fr;
 		align-items: center;
 		gap: 1.5rem;
+
+		@media screen and (min-width: 480px) {
+			grid-template-areas:
+				"radio title left"
+				"radio text text";
+			align-items: start;
+		}
 	}
 
 	&__radio-container {
@@ -115,12 +158,25 @@
 
 	&__title {
 		font-size: $fs-xs;
+
+		&:hover {
+			color: $c-p-moderate-cyan;
+		}
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+			margin-bottom: -1ch;
+		}
 	}
 
 	&__min {
 		font-size: $fs-xs;
 		font-weight: $fw-7;
 		color: $c-p-moderate-cyan;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+		}
 	}
 
 	&__text {
@@ -128,10 +184,19 @@
 		font-size: $fs-xs;
 		line-height: 3ch;
 		color: $c-n-dark-gray;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+		}
 	}
 
 	&__left {
 		grid-column: 1/3;
+
+		@media screen and (min-width: 480px) {
+			grid-column: unset;
+			grid-area: left;
+		}
 
 		&-num {
 			font-size: $fs-m;
@@ -152,6 +217,11 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 1.5rem;
+
+		@media screen and (min-width: 480px) {
+			justify-content: flex-start;
+			align-items: center;
+		}
 	}
 
 	&__command {
@@ -159,6 +229,12 @@
 		font-size: $fs-xs;
 		color: $c-n-dark-gray;
 		text-align: center;
+
+		@media screen and (min-width: 480px) {
+			flex-basis: unset;
+			margin-right: auto;
+			font-size: $fs-s;
+		}
 	}
 
 	&__input-container {
@@ -182,6 +258,11 @@
 		padding-left: 5ch;
 		border-radius: 50px;
 		font-weight: $fw-7;
+		cursor: pointer;
+
+		&:hover {
+			outline: 1px solid $c-p-moderate-cyan;
+		}
 	}
 
 	&__button {
@@ -197,6 +278,10 @@
 		&:not(:disabled) {
 			background-color: $c-p-moderate-cyan;
 			cursor: pointer;
+
+			&:hover {
+				background-color: $c-p-dark-cyan;
+			}
 		}
 
 		&:disabled {
@@ -215,12 +300,18 @@
 	margin: $gap-1-5;
 	padding: $gap-2 $gap-1-5;
 	border-radius: $rds;
+	max-width: 40rem;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5rem;
 	text-align: center;
+
+	@media screen and (min-width: 480px) {
+		gap: 2rem;
+		padding: $gap-3;
+	}
 
 	&__icon {
 		width: min-content;
@@ -229,12 +320,21 @@
 
 	&__title {
 		font-size: $fs-m;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-l;
+			margin-bottom: -1ch;
+		}
 	}
 
 	&__text {
 		font-size: $fs-xs;
 		color: $c-n-dark-gray;
 		line-height: 3ch;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+		}
 	}
 
 	&__button {

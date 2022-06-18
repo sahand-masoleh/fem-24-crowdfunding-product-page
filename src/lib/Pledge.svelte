@@ -2,7 +2,6 @@
 	// @ts-nocheck
 	import "../styles/Pledge.scss";
 	import checklcon from "../assets/images/icon-check.svg";
-	import closeIcon from "../assets/images/icon-close-modal.svg";
 
 	import OptionContainer from "./Option-Container.svelte";
 
@@ -37,12 +36,7 @@
 		<div class="pledge">
 			<h2 class="pledge__title">
 				Back this project
-				<img
-					src={closeIcon}
-					alt="close icon"
-					on:click={closeModal}
-					class="pledge__close"
-				/>
+				<button on:click={closeModal} class="pledge__close" />
 			</h2>
 			<p class="pledge__text">
 				Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
