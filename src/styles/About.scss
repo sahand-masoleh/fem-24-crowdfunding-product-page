@@ -10,6 +10,11 @@
 	flex-direction: column;
 	gap: 1.5rem;
 
+	@media screen and (min-width: 480px) {
+		padding: $gap-3;
+		gap: 2rem;
+	}
+
 	&__title {
 		font-size: $fs-m;
 	}
@@ -18,6 +23,10 @@
 		font-size: $fs-xs;
 		color: $c-n-dark-gray;
 		line-height: 3ch;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+		}
 	}
 }
 
@@ -31,12 +40,23 @@
 	align-items: flex-start;
 	gap: 1.5rem;
 
+	@media screen and (min-width: 480px) {
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: $gap-2;
+	}
+
 	&--disabled {
 		opacity: 0.5;
 	}
 
 	&__title {
 		font-size: $fs-xs;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-m;
+		}
 	}
 
 	&__min {
@@ -45,12 +65,21 @@
 		font-size: $fs-xs;
 		color: $c-p-moderate-cyan;
 		margin-top: -1rem;
+
+		@media screen and (min-width: 480px) {
+			margin-top: unset;
+			font-size: $fs-s;
+		}
 	}
 
 	&__text {
 		font-size: $fs-xs;
 		color: $c-n-dark-gray;
 		line-height: 2.5ch;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+		}
 	}
 
 	&__left {
@@ -75,6 +104,10 @@
 		&--enabled {
 			background-color: $c-p-moderate-cyan;
 			cursor: pointer;
+
+			&:hover {
+				background-color: $c-p-dark-cyan;
+			}
 		}
 
 		&--disabled {

@@ -15,6 +15,7 @@
 	@media screen and (min-width: 480px) {
 		flex-flow: row wrap;
 		column-gap: 8%;
+		padding: $gap-3;
 	}
 
 	&__container {
@@ -35,6 +36,10 @@
 	&__desc {
 		font-size: $fs-xs;
 		color: $c-n-dark-gray;
+
+		@media screen and (min-width: 480px) {
+			font-size: $fs-s;
+		}
 	}
 
 	&__divider {
