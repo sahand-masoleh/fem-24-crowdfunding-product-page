@@ -4,10 +4,22 @@
 	background: bottom / cover no-repeat;
 	background-image: url(../assets/images/image-hero-mobile.jpg);
 	margin-bottom: -5rem;
+	position: relative;
 
 	@media screen and (min-width: 480px) {
 		background-image: url(../assets/images/image-hero-desktop.jpg);
 		margin-bottom: -7rem;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-image: linear-gradient(#00000060 25%, transparent 50%);
+		mix-blend-mode: multiply;
 	}
 }
 
@@ -17,6 +29,7 @@
 	align-items: flex-start;
 	max-width: 75rem;
 	margin: 0 auto;
+	position: relative;
 
 	height: 20rem;
 	padding: $gap-2 $gap-1-5;
