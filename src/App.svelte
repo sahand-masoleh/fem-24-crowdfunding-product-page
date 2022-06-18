@@ -24,4 +24,18 @@
 	{#if isModalOpen}
 		<Pledge on:close-modal={closeModal} {checked} />
 	{/if}
+	<footer class="footer">
+		Challenge by <a
+			href="https://www.frontendmentor.io"
+			target="_blank"
+			rel="noopener noreferrer">Frontend Mentor</a
+		>. Coded by
+		<a
+			href="https://www.frontendmentor.io/profile/sahand-masoleh"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Sahand Masoleh</a
+		>
+	</footer>
 </div>

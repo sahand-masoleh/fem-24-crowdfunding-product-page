@@ -105,6 +105,7 @@
 
 		&-icon {
 			mask: url(../assets/images/icon-bookmark.svg) center / cover;
+			-webkit-mask: url(../assets/images/icon-bookmark.svg) center / cover;
 			height: 3.5rem;
 			width: 3.5rem;
 			position: relative;

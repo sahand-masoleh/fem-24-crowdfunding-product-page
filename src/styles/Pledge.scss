@@ -39,6 +39,8 @@
 		width: 1rem;
 		aspect-ratio: 1;
 		mask: center / cover no-repeat url(../assets//images/icon-close-menu.svg);
+		-webkit-mask: center / cover no-repeat
+			url(../assets//images/icon-close-menu.svg);
 
 		&:hover {
 			background-color: black;

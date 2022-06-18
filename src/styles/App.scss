@@ -1,3 +1,4 @@
+@use "./utils" as *;
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&display=swap");
 
 * {
@@ -13,4 +14,16 @@ body {
 
 .app {
 	display: grid;
+}
+
+.footer {
+	margin: 0 auto;
+	margin-bottom: 5px;
+	font-size: 0.75rem;
+	color: $c-n-dark-gray;
+	text-align: center;
+
+	& a {
+		color: $c-p-moderate-cyan;
+	}
 }
